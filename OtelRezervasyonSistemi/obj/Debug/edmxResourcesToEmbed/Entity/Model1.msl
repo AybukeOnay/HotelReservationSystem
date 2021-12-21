@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DbOtelRezervasyonSistemiModelStoreContainer" CdmEntityContainer="DbOtelRezervasyonSistemiEntities">
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="DbOtelRezervasyonSistemiModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblBirims">
+      <EntityTypeMapping TypeName="DbOtelRezervasyonSistemiModel.TblBirim">
+        <MappingFragment StoreEntitySet="TblBirim">
+          <ScalarProperty Name="BirimID" ColumnName="BirimID" />
+          <ScalarProperty Name="BirimAd" ColumnName="BirimAd" />
+          <ScalarProperty Name="BirimDurum" ColumnName="BirimDurum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblDepartmen">
+      <EntityTypeMapping TypeName="DbOtelRezervasyonSistemiModel.TblDepartman">
+        <MappingFragment StoreEntitySet="TblDepartman">
+          <ScalarProperty Name="DepartmanID" ColumnName="DepartmanID" />
+          <ScalarProperty Name="DepartmanAd" ColumnName="DepartmanAd" />
+          <ScalarProperty Name="DepartmanTelefon" ColumnName="DepartmanTelefon" />
+          <ScalarProperty Name="DepartmanDurum" ColumnName="DepartmanDurum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblDurums">
+      <EntityTypeMapping TypeName="DbOtelRezervasyonSistemiModel.TblDurum">
+        <MappingFragment StoreEntitySet="TblDurum">
+          <ScalarProperty Name="DurumID" ColumnName="DurumID" />
+          <ScalarProperty Name="DurumAd" ColumnName="DurumAd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblGorevs">
+      <EntityTypeMapping TypeName="DbOtelRezervasyonSistemiModel.TblGorev">
+        <MappingFragment StoreEntitySet="TblGorev">
+          <ScalarProperty Name="GorevID" ColumnName="GorevID" />
+          <ScalarProperty Name="GorevAd" ColumnName="GorevAd" />
+          <ScalarProperty Name="GorevDepartman" ColumnName="GorevDepartman" />
+          <ScalarProperty Name="GorevDurum" ColumnName="GorevDurum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblKasas">
+      <EntityTypeMapping TypeName="DbOtelRezervasyonSistemiModel.TblKasa">
+        <MappingFragment StoreEntitySet="TblKasa">
+          <ScalarProperty Name="KasaID" ColumnName="KasaID" />
+          <ScalarProperty Name="KasaAdi" ColumnName="KasaAdi" />
+          <ScalarProperty Name="KasaBakiye" ColumnName="KasaBakiye" />
+          <ScalarProperty Name="KasaGiren" ColumnName="KasaGiren" />
+          <ScalarProperty Name="KasaCikan" ColumnName="KasaCikan" />
+          <ScalarProperty Name="KasaDurum" ColumnName="KasaDurum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblKurs">
+      <EntityTypeMapping TypeName="DbOtelRezervasyonSistemiModel.TblKur">
+        <MappingFragment StoreEntitySet="TblKur">
+          <ScalarProperty Name="KurID" ColumnName="KurID" />
+          <ScalarProperty Name="KurAd" ColumnName="KurAd" />
+          <ScalarProperty Name="KurSembol" ColumnName="KurSembol" />
+          <ScalarProperty Name="KurDeger" ColumnName="KurDeger" />
+          <ScalarProperty Name="KurTarih" ColumnName="KurTarih" />
+          <ScalarProperty Name="KurDurum" ColumnName="KurDurum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblMusteris">
+      <EntityTypeMapping TypeName="DbOtelRezervasyonSistemiModel.TblMusteri">
+        <MappingFragment StoreEntitySet="TblMusteri">
+          <ScalarProperty Name="MusteriID" ColumnName="MusteriID" />
+          <ScalarProperty Name="MusteriAdSoyad" ColumnName="MusteriAdSoyad" />
+          <ScalarProperty Name="MusteriTC" ColumnName="MusteriTC" />
+          <ScalarProperty Name="MusteriMail" ColumnName="MusteriMail" />
+          <ScalarProperty Name="MusteriTelefon" ColumnName="MusteriTelefon" />
+          <ScalarProperty Name="MusteriAdres" ColumnName="MusteriAdres" />
+          <ScalarProperty Name="MusteriAciklama" ColumnName="MusteriAciklama" />
+          <ScalarProperty Name="MusteriKimlikFoto1" ColumnName="MusteriKimlikFoto1" />
+          <ScalarProperty Name="MusteriKimlikFoto2" ColumnName="MusteriKimlikFoto2" />
+          <ScalarProperty Name="MusteriUlke" ColumnName="MusteriUlke" />
+          <ScalarProperty Name="MusteriDurum" ColumnName="MusteriDurum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblOdas">
+      <EntityTypeMapping TypeName="DbOtelRezervasyonSistemiModel.TblOda">
+        <MappingFragment StoreEntitySet="TblOda">
+          <ScalarProperty Name="OdaID" ColumnName="OdaID" />
+          <ScalarProperty Name="OdaNo" ColumnName="OdaNo" />
+          <ScalarProperty Name="OdaKat" ColumnName="OdaKat" />
+          <ScalarProperty Name="OdaKapasite" ColumnName="OdaKapasite" />
+          <ScalarProperty Name="OdaAciklama" ColumnName="OdaAciklama" />
+          <ScalarProperty Name="OdaTelefon" ColumnName="OdaTelefon" />
+          <ScalarProperty Name="OdaDurum" ColumnName="OdaDurum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblPersonels">
+      <EntityTypeMapping TypeName="DbOtelRezervasyonSistemiModel.TblPersonel">
+        <MappingFragment StoreEntitySet="TblPersonel">
+          <ScalarProperty Name="PersonelID" ColumnName="PersonelID" />
+          <ScalarProperty Name="PersonelAdSoyad" ColumnName="PersonelAdSoyad" />
+          <ScalarProperty Name="PersonelTC" ColumnName="PersonelTC" />
+          <ScalarProperty Name="PersonelAdres" ColumnName="PersonelAdres" />
+          <ScalarProperty Name="PersonelTelefon" ColumnName="PersonelTelefon" />
+          <ScalarProperty Name="PersonelMail" ColumnName="PersonelMail" />
+          <ScalarProperty Name="PersonelIseGirisTarihi" ColumnName="PersonelIseGirisTarihi" />
+          <ScalarProperty Name="PersonelIstenCikisTarihi" ColumnName="PersonelIstenCikisTarihi" />
+          <ScalarProperty Name="PersonelDepartman" ColumnName="PersonelDepartman" />
+          <ScalarProperty Name="PersonelGorev" ColumnName="PersonelGorev" />
+          <ScalarProperty Name="PersonelAciklama" ColumnName="PersonelAciklama" />
+          <ScalarProperty Name="PersonelDurum" ColumnName="PersonelDurum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblTelefons">
+      <EntityTypeMapping TypeName="DbOtelRezervasyonSistemiModel.TblTelefon">
+        <MappingFragment StoreEntitySet="TblTelefon">
+          <ScalarProperty Name="TelefonID" ColumnName="TelefonID" />
+          <ScalarProperty Name="TelefonAciklama" ColumnName="TelefonAciklama" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="TelefonDurum" ColumnName="TelefonDurum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblUlkes">
+      <EntityTypeMapping TypeName="DbOtelRezervasyonSistemiModel.TblUlke">
+        <MappingFragment StoreEntitySet="TblUlke">
+          <ScalarProperty Name="UlkeID" ColumnName="UlkeID" />
+          <ScalarProperty Name="UlkeAd" ColumnName="UlkeAd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblUruns">
+      <EntityTypeMapping TypeName="DbOtelRezervasyonSistemiModel.TblUrun">
+        <MappingFragment StoreEntitySet="TblUrun">
+          <ScalarProperty Name="UrunID" ColumnName="UrunID" />
+          <ScalarProperty Name="UrunAd" ColumnName="UrunAd" />
+          <ScalarProperty Name="UrunGrup" ColumnName="UrunGrup" />
+          <ScalarProperty Name="UrunBirim" ColumnName="UrunBirim" />
+          <ScalarProperty Name="UrunFiyat" ColumnName="UrunFiyat" />
+          <ScalarProperty Name="UrunToplam" ColumnName="UrunToplam" />
+          <ScalarProperty Name="UrunKdv" ColumnName="UrunKdv" />
+          <ScalarProperty Name="UrunDurum" ColumnName="UrunDurum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblUrunGrups">
+      <EntityTypeMapping TypeName="DbOtelRezervasyonSistemiModel.TblUrunGrup">
+        <MappingFragment StoreEntitySet="TblUrunGrup">
+          <ScalarProperty Name="UrunGrupID" ColumnName="UrunGrupID" />
+          <ScalarProperty Name="UrunGrupAd" ColumnName="UrunGrupAd" />
+          <ScalarProperty Name="UrunGrupDurum" ColumnName="UrunGrupDurum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

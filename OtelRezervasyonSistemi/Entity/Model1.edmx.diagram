@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="83873b78625246c9b0dfb5ea406ecfa3" Name="Diagram1">
+        <EntityTypeShape EntityType="DbOtelRezervasyonSistemiModel.sysdiagram" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbOtelRezervasyonSistemiModel.TblBirim" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbOtelRezervasyonSistemiModel.TblDepartman" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbOtelRezervasyonSistemiModel.TblDurum" Width="1.5" PointX="0.75" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbOtelRezervasyonSistemiModel.TblGorev" Width="1.5" PointX="5.25" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbOtelRezervasyonSistemiModel.TblKasa" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbOtelRezervasyonSistemiModel.TblKur" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbOtelRezervasyonSistemiModel.TblMusteri" Width="1.5" PointX="3" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbOtelRezervasyonSistemiModel.TblOda" Width="1.5" PointX="3" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbOtelRezervasyonSistemiModel.TblPersonel" Width="1.5" PointX="7.5" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbOtelRezervasyonSistemiModel.TblTelefon" Width="1.5" PointX="3" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbOtelRezervasyonSistemiModel.TblUlke" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbOtelRezervasyonSistemiModel.TblUrun" Width="1.5" PointX="5.25" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbOtelRezervasyonSistemiModel.TblUrunGrup" Width="1.5" PointX="3" PointY="22.375" IsExpanded="true" />
+        <AssociationConnector Association="DbOtelRezervasyonSistemiModel.FK_TblBirim_TblDurum" ManuallyRouted="false" />
+        <AssociationConnector Association="DbOtelRezervasyonSistemiModel.FK_TblUrun_TblBirim" ManuallyRouted="false" />
+        <AssociationConnector Association="DbOtelRezervasyonSistemiModel.FK_TblDepartman_TblDurum" ManuallyRouted="false" />
+        <AssociationConnector Association="DbOtelRezervasyonSistemiModel.FK_TblGorev_TblDepartman" ManuallyRouted="false" />
+        <AssociationConnector Association="DbOtelRezervasyonSistemiModel.FK_TblPersonel_TblDepartman" ManuallyRouted="false" />
+        <AssociationConnector Association="DbOtelRezervasyonSistemiModel.FK_TblGorev_TblDurum" ManuallyRouted="false" />
+        <AssociationConnector Association="DbOtelRezervasyonSistemiModel.FK_TblKasa_TblDurum" ManuallyRouted="false" />
+        <AssociationConnector Association="DbOtelRezervasyonSistemiModel.FK_TblMusteri_TblDurum" ManuallyRouted="false" />
+        <AssociationConnector Association="DbOtelRezervasyonSistemiModel.FK_TblOda_TblDurum" ManuallyRouted="false" />
+        <AssociationConnector Association="DbOtelRezervasyonSistemiModel.FK_TblPersonel_TblDurum" ManuallyRouted="false" />
+        <AssociationConnector Association="DbOtelRezervasyonSistemiModel.FK_TblTelefon_TblDurum" ManuallyRouted="false" />
+        <AssociationConnector Association="DbOtelRezervasyonSistemiModel.FK_TblUrun_TblDurum" ManuallyRouted="false" />
+        <AssociationConnector Association="DbOtelRezervasyonSistemiModel.FK_TblUrunGrup_TblDurum" ManuallyRouted="false" />
+        <AssociationConnector Association="DbOtelRezervasyonSistemiModel.FK_TblPersonel_TblGorev" ManuallyRouted="false" />
+        <AssociationConnector Association="DbOtelRezervasyonSistemiModel.FK_TblUrun_TblUrunGrup" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
