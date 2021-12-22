@@ -12,18 +12,17 @@ using System.Windows.Forms;
 
 namespace OtelRezervasyonSistemi.Formlar.Tanımlamalar
 {
-    public partial class FrmBirim : Form
+    public partial class FrmTelefon : Form
     {
-        public FrmBirim()
+        public FrmTelefon()
         {
             InitializeComponent();
         }
         DbOtelRezervasyonSistemiEntities db = new DbOtelRezervasyonSistemiEntities();
-
-        private void FrmBirim_Load(object sender, EventArgs e)
+        private void FrmTelefon_Load(object sender, EventArgs e)
         {
-            db.TblBirims.Load();
-            bindingSource1.DataSource = db.TblBirims.Local;
+            db.TblTelefons.Load();
+            bindingSource1.DataSource = db.TblTelefons.Local;
             repositoryItemLookUpEditDurum.DataSource = (from x in db.TblDurums
                                                         select new
                                                         {
@@ -34,6 +33,12 @@ namespace OtelRezervasyonSistemi.Formlar.Tanımlamalar
 
         private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
+            db.SaveChanges();
+        }
+
+        private void silToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            bindingSource1.RemoveCurrent();
             db.SaveChanges();
         }
     }

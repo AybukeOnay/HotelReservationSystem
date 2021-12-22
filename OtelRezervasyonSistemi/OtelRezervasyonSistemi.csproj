@@ -127,11 +127,23 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formlar\Personel\FrmPersonelKarti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Personel\FrmPersonelKarti.Designer.cs">
+      <DependentUpon>FrmPersonelKarti.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formlar\Tanımlamalar\FrmBirim.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formlar\Tanımlamalar\FrmBirim.Designer.cs">
       <DependentUpon>FrmBirim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Tanımlamalar\FrmDepartman.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Tanımlamalar\FrmDepartman.Designer.cs">
+      <DependentUpon>FrmDepartman.cs</DependentUpon>
     </Compile>
     <Compile Include="Formlar\Tanımlamalar\FrmDurum.cs">
       <SubType>Form</SubType>
@@ -139,16 +151,85 @@
     <Compile Include="Formlar\Tanımlamalar\FrmDurum.Designer.cs">
       <DependentUpon>FrmDurum.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formlar\Tanımlamalar\FrmGorev.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Tanımlamalar\FrmGorev.Designer.cs">
+      <DependentUpon>FrmGorev.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Tanımlamalar\FrmKasa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Tanımlamalar\FrmKasa.Designer.cs">
+      <DependentUpon>FrmKasa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Tanımlamalar\FrmKur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Tanımlamalar\FrmKur.Designer.cs">
+      <DependentUpon>FrmKur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Tanımlamalar\FrmOda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Tanımlamalar\FrmOda.Designer.cs">
+      <DependentUpon>FrmOda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Tanımlamalar\FrmTelefon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Tanımlamalar\FrmTelefon.Designer.cs">
+      <DependentUpon>FrmTelefon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Tanımlamalar\FrmUlke.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Tanımlamalar\FrmUlke.Designer.cs">
+      <DependentUpon>FrmUlke.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Tanımlamalar\FrmUrunGrup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Tanımlamalar\FrmUrunGrup.Designer.cs">
+      <DependentUpon>FrmUrunGrup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Personel\FrmPersonelKarti.resx">
+      <DependentUpon>FrmPersonelKarti.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formlar\Tanımlamalar\FrmBirim.resx">
       <DependentUpon>FrmBirim.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Tanımlamalar\FrmDepartman.resx">
+      <DependentUpon>FrmDepartman.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formlar\Tanımlamalar\FrmDurum.resx">
       <DependentUpon>FrmDurum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Tanımlamalar\FrmGorev.resx">
+      <DependentUpon>FrmGorev.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Tanımlamalar\FrmKasa.resx">
+      <DependentUpon>FrmKasa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Tanımlamalar\FrmKur.resx">
+      <DependentUpon>FrmKur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Tanımlamalar\FrmOda.resx">
+      <DependentUpon>FrmOda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Tanımlamalar\FrmTelefon.resx">
+      <DependentUpon>FrmTelefon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Tanımlamalar\FrmUlke.resx">
+      <DependentUpon>FrmUlke.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Tanımlamalar\FrmUrunGrup.resx">
+      <DependentUpon>FrmUrunGrup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

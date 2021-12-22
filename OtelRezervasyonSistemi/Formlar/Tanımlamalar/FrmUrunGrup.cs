@@ -1,4 +1,5 @@
-﻿using OtelRezervasyonSistemi.Entity;
+﻿using DevExpress.XtraEditors;
+using OtelRezervasyonSistemi.Entity;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,18 +13,17 @@ using System.Windows.Forms;
 
 namespace OtelRezervasyonSistemi.Formlar.Tanımlamalar
 {
-    public partial class FrmBirim : Form
+    public partial class FrmUrunGrup : Form
     {
-        public FrmBirim()
+        public FrmUrunGrup()
         {
             InitializeComponent();
         }
         DbOtelRezervasyonSistemiEntities db = new DbOtelRezervasyonSistemiEntities();
-
-        private void FrmBirim_Load(object sender, EventArgs e)
+        private void FrmUrunGrup_Load(object sender, EventArgs e)
         {
-            db.TblBirims.Load();
-            bindingSource1.DataSource = db.TblBirims.Local;
+            db.TblUrunGrups.Load();
+            bndSrc_UrunGrup.DataSource = db.TblUrunGrups.Local;
             repositoryItemLookUpEditDurum.DataSource = (from x in db.TblDurums
                                                         select new
                                                         {
@@ -34,6 +34,19 @@ namespace OtelRezervasyonSistemi.Formlar.Tanımlamalar
 
         private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (Exception)
+            {
+                XtraMessageBox.Show("Bilgiler kaydedilirken hata oluştu", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void silToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            bndSrc_UrunGrup.RemoveCurrent();
             db.SaveChanges();
         }
     }

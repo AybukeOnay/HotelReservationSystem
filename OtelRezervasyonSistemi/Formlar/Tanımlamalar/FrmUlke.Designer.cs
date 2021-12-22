@@ -1,7 +1,7 @@
 ﻿
 namespace OtelRezervasyonSistemi.Formlar.Tanımlamalar
 {
-    partial class FrmBirim
+    partial class FrmUlke
     {
         /// <summary>
         /// Required designer variable.
@@ -31,15 +31,19 @@ namespace OtelRezervasyonSistemi.Formlar.Tanımlamalar
         {
             this.components = new System.ComponentModel.Container();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.grd_UlkeAdi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemLookUpEditDurum = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.repositoryItemLookUpEditDepartman = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.ctext_Ulke = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditDurum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditDepartman)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            this.ctext_Ulke.SuspendLayout();
             this.SuspendLayout();
             // 
             // gridControl1
@@ -50,38 +54,29 @@ namespace OtelRezervasyonSistemi.Formlar.Tanımlamalar
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemLookUpEditDurum});
+            this.repositoryItemLookUpEditDurum,
+            this.repositoryItemLookUpEditDepartman});
             this.gridControl1.Size = new System.Drawing.Size(634, 491);
-            this.gridControl1.TabIndex = 0;
+            this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1,
-            this.gridColumn2});
+            this.grd_UlkeAdi});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
             this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged);
             // 
-            // gridColumn1
+            // grd_UlkeAdi
             // 
-            this.gridColumn1.Caption = "Birim Adı";
-            this.gridColumn1.FieldName = "BirimAd";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "Durum";
-            this.gridColumn2.ColumnEdit = this.repositoryItemLookUpEditDurum;
-            this.gridColumn2.FieldName = "BirimDurum";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
+            this.grd_UlkeAdi.Caption = "Ülke Adı";
+            this.grd_UlkeAdi.FieldName = "UlkeAd";
+            this.grd_UlkeAdi.Name = "grd_UlkeAdi";
+            this.grd_UlkeAdi.Visible = true;
+            this.grd_UlkeAdi.VisibleIndex = 0;
             // 
             // repositoryItemLookUpEditDurum
             // 
@@ -93,7 +88,31 @@ namespace OtelRezervasyonSistemi.Formlar.Tanımlamalar
             this.repositoryItemLookUpEditDurum.NullText = "Durumu Seçiniz";
             this.repositoryItemLookUpEditDurum.ValueMember = "DurumID";
             // 
-            // FrmBirim
+            // repositoryItemLookUpEditDepartman
+            // 
+            this.repositoryItemLookUpEditDepartman.AutoHeight = false;
+            this.repositoryItemLookUpEditDepartman.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemLookUpEditDepartman.DisplayMember = "DepartmanAd";
+            this.repositoryItemLookUpEditDepartman.Name = "repositoryItemLookUpEditDepartman";
+            this.repositoryItemLookUpEditDepartman.NullText = "Departman Seçiniz";
+            this.repositoryItemLookUpEditDepartman.ValueMember = "DepartmanID";
+            // 
+            // ctext_Ulke
+            // 
+            this.ctext_Ulke.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.silToolStripMenuItem});
+            this.ctext_Ulke.Name = "ctext_Ulke";
+            this.ctext_Ulke.Size = new System.Drawing.Size(87, 26);
+            // 
+            // silToolStripMenuItem
+            // 
+            this.silToolStripMenuItem.Name = "silToolStripMenuItem";
+            this.silToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.silToolStripMenuItem.Text = "Sil";
+            this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
+            // 
+            // FrmUlke
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -101,14 +120,16 @@ namespace OtelRezervasyonSistemi.Formlar.Tanımlamalar
             this.Controls.Add(this.gridControl1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FrmBirim";
+            this.Name = "FrmUlke";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Birim Tanımlamaları";
-            this.Load += new System.EventHandler(this.FrmBirim_Load);
+            this.Text = "Ülke Tanımları";
+            this.Load += new System.EventHandler(this.FrmUlke_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditDurum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditDepartman)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            this.ctext_Ulke.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -118,8 +139,10 @@ namespace OtelRezervasyonSistemi.Formlar.Tanımlamalar
         private DevExpress.XtraGrid.GridControl gridControl1;
         private System.Windows.Forms.BindingSource bindingSource1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn grd_UlkeAdi;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEditDurum;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEditDepartman;
+        private System.Windows.Forms.ContextMenuStrip ctext_Ulke;
+        private System.Windows.Forms.ToolStripMenuItem silToolStripMenuItem;
     }
 }

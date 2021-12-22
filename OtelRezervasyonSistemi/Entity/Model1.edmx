@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DbOtelRezervasyonSistemiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DbOtelRezervasyonSistemiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -19,7 +19,7 @@
           <Key>
             <PropertyRef Name="BirimID" />
           </Key>
-          <Property Name="BirimID" Type="int" Nullable="false" />
+          <Property Name="BirimID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="BirimAd" Type="nvarchar" MaxLength="50" />
           <Property Name="BirimDurum" Type="int" />
         </EntityType>
@@ -27,7 +27,7 @@
           <Key>
             <PropertyRef Name="DepartmanID" />
           </Key>
-          <Property Name="DepartmanID" Type="int" Nullable="false" />
+          <Property Name="DepartmanID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="DepartmanAd" Type="nvarchar" MaxLength="50" />
           <Property Name="DepartmanTelefon" Type="char" MaxLength="4" />
           <Property Name="DepartmanDurum" Type="int" />
@@ -43,7 +43,7 @@
           <Key>
             <PropertyRef Name="GorevID" />
           </Key>
-          <Property Name="GorevID" Type="int" Nullable="false" />
+          <Property Name="GorevID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="GorevAd" Type="nvarchar" MaxLength="50" />
           <Property Name="GorevDepartman" Type="int" />
           <Property Name="GorevDurum" Type="int" />
@@ -408,8 +408,7 @@
             <End Role="TblUrunGrup" EntitySet="TblUrunGrup" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DbOtelRezervasyonSistemiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">

@@ -1,7 +1,7 @@
 ﻿
 namespace OtelRezervasyonSistemi.Formlar.Tanımlamalar
 {
-    partial class FrmBirim
+    partial class FrmGorev
     {
         /// <summary>
         /// Required designer variable.
@@ -31,15 +31,18 @@ namespace OtelRezervasyonSistemi.Formlar.Tanımlamalar
         {
             this.components = new System.ComponentModel.Container();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.grd_GorevAd = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.grd_Durum = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemLookUpEditDurum = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.grd_Departman = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemLookUpEditDepartman = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditDurum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditDepartman)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
@@ -50,38 +53,40 @@ namespace OtelRezervasyonSistemi.Formlar.Tanımlamalar
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemLookUpEditDurum});
+            this.repositoryItemLookUpEditDurum,
+            this.repositoryItemLookUpEditDepartman});
             this.gridControl1.Size = new System.Drawing.Size(634, 491);
-            this.gridControl1.TabIndex = 0;
+            this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1,
-            this.gridColumn2});
+            this.grd_GorevAd,
+            this.grd_Departman,
+            this.grd_Durum});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
             this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged);
             // 
-            // gridColumn1
+            // grd_GorevAd
             // 
-            this.gridColumn1.Caption = "Birim Adı";
-            this.gridColumn1.FieldName = "BirimAd";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
+            this.grd_GorevAd.Caption = "Görev Adı";
+            this.grd_GorevAd.FieldName = "GorevAd";
+            this.grd_GorevAd.Name = "grd_GorevAd";
+            this.grd_GorevAd.Visible = true;
+            this.grd_GorevAd.VisibleIndex = 0;
             // 
-            // gridColumn2
+            // grd_Durum
             // 
-            this.gridColumn2.Caption = "Durum";
-            this.gridColumn2.ColumnEdit = this.repositoryItemLookUpEditDurum;
-            this.gridColumn2.FieldName = "BirimDurum";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
+            this.grd_Durum.Caption = "Durum";
+            this.grd_Durum.ColumnEdit = this.repositoryItemLookUpEditDurum;
+            this.grd_Durum.FieldName = "GorevDurum";
+            this.grd_Durum.Name = "grd_Durum";
+            this.grd_Durum.Visible = true;
+            this.grd_Durum.VisibleIndex = 2;
             // 
             // repositoryItemLookUpEditDurum
             // 
@@ -93,7 +98,26 @@ namespace OtelRezervasyonSistemi.Formlar.Tanımlamalar
             this.repositoryItemLookUpEditDurum.NullText = "Durumu Seçiniz";
             this.repositoryItemLookUpEditDurum.ValueMember = "DurumID";
             // 
-            // FrmBirim
+            // grd_Departman
+            // 
+            this.grd_Departman.Caption = "Departman";
+            this.grd_Departman.ColumnEdit = this.repositoryItemLookUpEditDepartman;
+            this.grd_Departman.FieldName = "GorevDepartman";
+            this.grd_Departman.Name = "grd_Departman";
+            this.grd_Departman.Visible = true;
+            this.grd_Departman.VisibleIndex = 1;
+            // 
+            // repositoryItemLookUpEditDepartman
+            // 
+            this.repositoryItemLookUpEditDepartman.AutoHeight = false;
+            this.repositoryItemLookUpEditDepartman.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemLookUpEditDepartman.DisplayMember = "DepartmanAd";
+            this.repositoryItemLookUpEditDepartman.Name = "repositoryItemLookUpEditDepartman";
+            this.repositoryItemLookUpEditDepartman.NullText = "Departman Seçiniz";
+            this.repositoryItemLookUpEditDepartman.ValueMember = "DepartmanID";
+            // 
+            // FrmGorev
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -101,14 +125,15 @@ namespace OtelRezervasyonSistemi.Formlar.Tanımlamalar
             this.Controls.Add(this.gridControl1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FrmBirim";
+            this.Name = "FrmGorev";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Birim Tanımlamaları";
-            this.Load += new System.EventHandler(this.FrmBirim_Load);
+            this.Text = "Görev Tanımlamaları";
+            this.Load += new System.EventHandler(this.FrmGorev_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditDurum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditDepartman)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -116,10 +141,12 @@ namespace OtelRezervasyonSistemi.Formlar.Tanımlamalar
         #endregion
 
         private DevExpress.XtraGrid.GridControl gridControl1;
-        private System.Windows.Forms.BindingSource bindingSource1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn grd_GorevAd;
+        private DevExpress.XtraGrid.Columns.GridColumn grd_Departman;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEditDepartman;
+        private DevExpress.XtraGrid.Columns.GridColumn grd_Durum;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEditDurum;
+        private System.Windows.Forms.BindingSource bindingSource1;
     }
 }

@@ -1,4 +1,5 @@
-﻿using OtelRezervasyonSistemi.Entity;
+﻿using DevExpress.XtraEditors;
+using OtelRezervasyonSistemi.Entity;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,29 +13,42 @@ using System.Windows.Forms;
 
 namespace OtelRezervasyonSistemi.Formlar.Tanımlamalar
 {
-    public partial class FrmBirim : Form
+    public partial class FrmGorev : Form
     {
-        public FrmBirim()
+        public FrmGorev()
         {
             InitializeComponent();
         }
         DbOtelRezervasyonSistemiEntities db = new DbOtelRezervasyonSistemiEntities();
-
-        private void FrmBirim_Load(object sender, EventArgs e)
+        private void FrmGorev_Load(object sender, EventArgs e)
         {
-            db.TblBirims.Load();
-            bindingSource1.DataSource = db.TblBirims.Local;
+            db.TblGorevs.Load();
+            bindingSource1.DataSource = db.TblGorevs.Local;
             repositoryItemLookUpEditDurum.DataSource = (from x in db.TblDurums
                                                         select new
                                                         {
                                                             x.DurumID,
                                                             x.DurumAd
                                                         }).ToList();
+            
+            repositoryItemLookUpEditDepartman.DataSource= (from x in db.TblDepartmen
+                                                           select new
+                                                           {
+                                                               x.DepartmanID,
+                                                               x.DepartmanAd
+                                                           }).ToList();
         }
 
         private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
-            db.SaveChanges();
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (Exception)
+            {
+                XtraMessageBox.Show("Bilgiler kaydedilirken hata oluştu", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

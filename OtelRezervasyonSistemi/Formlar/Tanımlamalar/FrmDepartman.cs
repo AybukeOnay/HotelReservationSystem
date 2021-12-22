@@ -1,4 +1,5 @@
-﻿using OtelRezervasyonSistemi.Entity;
+﻿using DevExpress.XtraEditors;
+using OtelRezervasyonSistemi.Entity;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,19 +13,20 @@ using System.Windows.Forms;
 
 namespace OtelRezervasyonSistemi.Formlar.Tanımlamalar
 {
-    public partial class FrmBirim : Form
+    public partial class FrmDepartman : Form
     {
-        public FrmBirim()
+        public FrmDepartman()
         {
             InitializeComponent();
         }
+
         DbOtelRezervasyonSistemiEntities db = new DbOtelRezervasyonSistemiEntities();
 
-        private void FrmBirim_Load(object sender, EventArgs e)
+        private void FrmDepartman_Load(object sender, EventArgs e)
         {
-            db.TblBirims.Load();
-            bindingSource1.DataSource = db.TblBirims.Local;
-            repositoryItemLookUpEditDurum.DataSource = (from x in db.TblDurums
+            db.TblDepartmen.Load();
+            bindingSource1.DataSource = db.TblDepartmen.Local;
+            repositoryItemLookUpEdit1.DataSource = (from x in db.TblDurums
                                                         select new
                                                         {
                                                             x.DurumID,
@@ -32,9 +34,16 @@ namespace OtelRezervasyonSistemi.Formlar.Tanımlamalar
                                                         }).ToList();
         }
 
-        private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        private void gridView2_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
-            db.SaveChanges();
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (Exception)
+            {
+                XtraMessageBox.Show("Bilgiler kaydedilirken hata oluştu", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

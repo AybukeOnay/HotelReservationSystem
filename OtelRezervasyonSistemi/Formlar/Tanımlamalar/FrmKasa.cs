@@ -1,4 +1,5 @@
-﻿using OtelRezervasyonSistemi.Entity;
+﻿using DevExpress.XtraEditors;
+using OtelRezervasyonSistemi.Entity;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,18 +13,17 @@ using System.Windows.Forms;
 
 namespace OtelRezervasyonSistemi.Formlar.Tanımlamalar
 {
-    public partial class FrmBirim : Form
+    public partial class FrmKasa : Form
     {
-        public FrmBirim()
+        public FrmKasa()
         {
             InitializeComponent();
         }
         DbOtelRezervasyonSistemiEntities db = new DbOtelRezervasyonSistemiEntities();
-
-        private void FrmBirim_Load(object sender, EventArgs e)
+        private void FrmKasa_Load(object sender, EventArgs e)
         {
-            db.TblBirims.Load();
-            bindingSource1.DataSource = db.TblBirims.Local;
+            db.TblKasas.Load();
+            bindingSource1.DataSource = db.TblKasas.Local;
             repositoryItemLookUpEditDurum.DataSource = (from x in db.TblDurums
                                                         select new
                                                         {
@@ -34,7 +34,14 @@ namespace OtelRezervasyonSistemi.Formlar.Tanımlamalar
 
         private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
-            db.SaveChanges();
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (Exception)
+            {
+                XtraMessageBox.Show("Bilgiler kaydedilirken hata oluştu", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }
