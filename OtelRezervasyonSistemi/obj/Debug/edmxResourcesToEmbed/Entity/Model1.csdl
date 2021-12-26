@@ -133,6 +133,10 @@
     <NavigationProperty Name="TblDepartman" Relationship="Self.FK_TblPersonel_TblDepartman" FromRole="TblPersonel" ToRole="TblDepartman" />
     <NavigationProperty Name="TblDurum" Relationship="Self.FK_TblPersonel_TblDurum" FromRole="TblPersonel" ToRole="TblDurum" />
     <NavigationProperty Name="TblGorev" Relationship="Self.FK_TblPersonel_TblGorev" FromRole="TblPersonel" ToRole="TblGorev" />
+    <Property Name="PersonelKimlikOn" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="PersonelKimlikArka" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="PersonelSifre" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="PersonelYetki" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
   </EntityType>
   <EntityType Name="TblTelefon">
     <Key>

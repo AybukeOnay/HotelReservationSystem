@@ -76,5 +76,18 @@ namespace OtelRezervasyonSistemi
             Formlar.Tanımlamalar.FrmUrunGrup fr = new Formlar.Tanımlamalar.FrmUrunGrup();
             fr.Show();
         }
+
+        private void btn_PersonelKarti_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Personel.FrmPersonelKarti fr = new Formlar.Personel.FrmPersonelKarti();
+            fr.Show();
+        }
+
+        private void btn_PersonelListesi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Personel.FrmPersonelListesi fr = new Formlar.Personel.FrmPersonelListesi();
+            fr.MdiParent = this;
+            fr.Show();
+        }
     }
 }

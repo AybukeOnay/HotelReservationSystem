@@ -26,6 +26,10 @@ namespace OtelRezervasyonSistemi.Entity
         public Nullable<int> PersonelGorev { get; set; }
         public string PersonelAciklama { get; set; }
         public Nullable<int> PersonelDurum { get; set; }
+        public string PersonelKimlikOn { get; set; }
+        public string PersonelKimlikArka { get; set; }
+        public string PersonelSifre { get; set; }
+        public string PersonelYetki { get; set; }
     
         public virtual TblDepartman TblDepartman { get; set; }
         public virtual TblDurum TblDurum { get; set; }

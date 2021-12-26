@@ -108,6 +108,10 @@
     <Property Name="PersonelDepartman" Type="int" />
     <Property Name="PersonelGorev" Type="int" />
     <Property Name="PersonelAciklama" Type="nvarchar" MaxLength="250" />
+    <Property Name="PersonelKimlikOn" Type="nvarchar" MaxLength="250" />
+    <Property Name="PersonelKimlikArka" Type="nvarchar" MaxLength="250" />
+    <Property Name="PersonelSifre" Type="nvarchar" MaxLength="20" />
+    <Property Name="PersonelYetki" Type="char" MaxLength="1" />
     <Property Name="PersonelDurum" Type="int" />
   </EntityType>
   <EntityType Name="TblTelefon">

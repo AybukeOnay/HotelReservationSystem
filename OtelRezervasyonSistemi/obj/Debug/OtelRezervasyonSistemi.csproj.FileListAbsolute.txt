@@ -1,4 +1,3 @@
-D:\C# Projeler\Otel Rezervasyon Sistemi\OtelRezervasyonSistemi\OtelRezervasyonSistemi\obj\Debug\OtelRezervasyonSistemi.csprojAssemblyReference.cache
 D:\C# Projeler\Otel Rezervasyon Sistemi\OtelRezervasyonSistemi\OtelRezervasyonSistemi\obj\Debug\OtelRezervasyonSistemi.Properties.Resources.resources
 D:\C# Projeler\Otel Rezervasyon Sistemi\OtelRezervasyonSistemi\OtelRezervasyonSistemi\obj\Debug\OtelRezervasyonSistemi.csproj.GenerateResource.cache
 D:\C# Projeler\Otel Rezervasyon Sistemi\OtelRezervasyonSistemi\OtelRezervasyonSistemi\obj\Debug\OtelRezervasyonSistemi.exe.licenses
@@ -106,3 +105,6 @@ D:\C# Projeler\Otel Rezervasyon Sistemi\OtelRezervasyonSistemi\OtelRezervasyonSi
 D:\C# Projeler\Otel Rezervasyon Sistemi\OtelRezervasyonSistemi\OtelRezervasyonSistemi\obj\Debug\OtelRezervasyonSistemi.Formlar.Tanımlamalar.FrmTelefon.resources
 D:\C# Projeler\Otel Rezervasyon Sistemi\OtelRezervasyonSistemi\OtelRezervasyonSistemi\obj\Debug\OtelRezervasyonSistemi.Formlar.Tanımlamalar.FrmUlke.resources
 D:\C# Projeler\Otel Rezervasyon Sistemi\OtelRezervasyonSistemi\OtelRezervasyonSistemi\obj\Debug\OtelRezervasyonSistemi.Formlar.Tanımlamalar.FrmUrunGrup.resources
+D:\C# Projeler\Otel Rezervasyon Sistemi\OtelRezervasyonSistemi\OtelRezervasyonSistemi\obj\Debug\OtelRezervasyonSistemi.Formlar.Personel.FrmPersonelKarti.resources
+D:\C# Projeler\Otel Rezervasyon Sistemi\OtelRezervasyonSistemi\OtelRezervasyonSistemi\obj\Debug\OtelRezervasyonSistemi.csprojAssemblyReference.cache
+D:\C# Projeler\Otel Rezervasyon Sistemi\OtelRezervasyonSistemi\OtelRezervasyonSistemi\obj\Debug\OtelRezervasyonSistemi.Formlar.Personel.FrmPersonelListesi.resources

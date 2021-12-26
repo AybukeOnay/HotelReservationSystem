@@ -113,6 +113,10 @@
           <Property Name="PersonelDepartman" Type="int" />
           <Property Name="PersonelGorev" Type="int" />
           <Property Name="PersonelAciklama" Type="nvarchar" MaxLength="250" />
+          <Property Name="PersonelKimlikOn" Type="nvarchar" MaxLength="250" />
+          <Property Name="PersonelKimlikArka" Type="nvarchar" MaxLength="250" />
+          <Property Name="PersonelSifre" Type="nvarchar" MaxLength="20" />
+          <Property Name="PersonelYetki" Type="char" MaxLength="1" />
           <Property Name="PersonelDurum" Type="int" />
         </EntityType>
         <EntityType Name="TblTelefon">
@@ -545,6 +549,10 @@
           <NavigationProperty Name="TblDepartman" Relationship="Self.FK_TblPersonel_TblDepartman" FromRole="TblPersonel" ToRole="TblDepartman" />
           <NavigationProperty Name="TblDurum" Relationship="Self.FK_TblPersonel_TblDurum" FromRole="TblPersonel" ToRole="TblDurum" />
           <NavigationProperty Name="TblGorev" Relationship="Self.FK_TblPersonel_TblGorev" FromRole="TblPersonel" ToRole="TblGorev" />
+          <Property Name="PersonelKimlikOn" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="PersonelKimlikArka" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="PersonelSifre" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PersonelYetki" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
         </EntityType>
         <EntityType Name="TblTelefon">
           <Key>
@@ -956,6 +964,10 @@
           <EntitySetMapping Name="TblPersonels">
             <EntityTypeMapping TypeName="DbOtelRezervasyonSistemiModel.TblPersonel">
               <MappingFragment StoreEntitySet="TblPersonel">
+                <ScalarProperty Name="PersonelYetki" ColumnName="PersonelYetki" />
+                <ScalarProperty Name="PersonelSifre" ColumnName="PersonelSifre" />
+                <ScalarProperty Name="PersonelKimlikArka" ColumnName="PersonelKimlikArka" />
+                <ScalarProperty Name="PersonelKimlikOn" ColumnName="PersonelKimlikOn" />
                 <ScalarProperty Name="PersonelID" ColumnName="PersonelID" />
                 <ScalarProperty Name="PersonelAdSoyad" ColumnName="PersonelAdSoyad" />
                 <ScalarProperty Name="PersonelTC" ColumnName="PersonelTC" />

@@ -106,6 +106,10 @@
     <EntitySetMapping Name="TblPersonels">
       <EntityTypeMapping TypeName="DbOtelRezervasyonSistemiModel.TblPersonel">
         <MappingFragment StoreEntitySet="TblPersonel">
+          <ScalarProperty Name="PersonelYetki" ColumnName="PersonelYetki" />
+          <ScalarProperty Name="PersonelSifre" ColumnName="PersonelSifre" />
+          <ScalarProperty Name="PersonelKimlikArka" ColumnName="PersonelKimlikArka" />
+          <ScalarProperty Name="PersonelKimlikOn" ColumnName="PersonelKimlikOn" />
           <ScalarProperty Name="PersonelID" ColumnName="PersonelID" />
           <ScalarProperty Name="PersonelAdSoyad" ColumnName="PersonelAdSoyad" />
           <ScalarProperty Name="PersonelTC" ColumnName="PersonelTC" />
