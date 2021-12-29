@@ -16,6 +16,10 @@ namespace OtelRezervasyonSistemi.Repositories
         {
             return db.Set<T>().ToList();
         }
+        public List<T> GetListByID(Expression<Func<T, bool>> filter)
+        {
+            return db.Set<T>().Where(filter).ToList();
+        }
         public void TAdd(T cls_t)
         {
             db.Set<T>().Add(cls_t);

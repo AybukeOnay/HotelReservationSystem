@@ -25,7 +25,11 @@ namespace OtelRezervasyonSistemi.Entity
         public string MusteriKimlikFoto2 { get; set; }
         public Nullable<int> MusteriUlke { get; set; }
         public Nullable<int> MusteriDurum { get; set; }
+        public Nullable<int> MusteriSehir { get; set; }
+        public Nullable<int> MusteriIlce { get; set; }
     
         public virtual TblDurum TblDurum { get; set; }
+        public virtual TblIlceler TblIlceler { get; set; }
+        public virtual TblSehirler TblSehirler { get; set; }
     }
 }

@@ -108,3 +108,7 @@ D:\C# Projeler\Otel Rezervasyon Sistemi\OtelRezervasyonSistemi\OtelRezervasyonSi
 D:\C# Projeler\Otel Rezervasyon Sistemi\OtelRezervasyonSistemi\OtelRezervasyonSistemi\obj\Debug\OtelRezervasyonSistemi.Formlar.Personel.FrmPersonelKarti.resources
 D:\C# Projeler\Otel Rezervasyon Sistemi\OtelRezervasyonSistemi\OtelRezervasyonSistemi\obj\Debug\OtelRezervasyonSistemi.csprojAssemblyReference.cache
 D:\C# Projeler\Otel Rezervasyon Sistemi\OtelRezervasyonSistemi\OtelRezervasyonSistemi\obj\Debug\OtelRezervasyonSistemi.Formlar.Personel.FrmPersonelListesi.resources
+D:\C# Projeler\Otel Rezervasyon Sistemi\OtelRezervasyonSistemi\OtelRezervasyonSistemi\obj\Debug\OtelRezervasyonSistemi.Formlar.Misafir.FrmMisafirKarti.resources
+D:\C# Projeler\Otel Rezervasyon Sistemi\OtelRezervasyonSistemi\OtelRezervasyonSistemi\obj\Debug\OtelRezervasyonSistemi.Formlar.Misafir.FrmMisafirListesi.resources
+D:\C# Projeler\Otel Rezervasyon Sistemi\OtelRezervasyonSistemi\OtelRezervasyonSistemi\obj\Debug\OtelRezervasyonSistemi.Formlar.Urun.FrmUrunListesi.resources
+D:\C# Projeler\Otel Rezervasyon Sistemi\OtelRezervasyonSistemi\OtelRezervasyonSistemi\obj\Debug\OtelRezervasyonSistemi.Formlar.Urun.FrmUrunKarti.resources

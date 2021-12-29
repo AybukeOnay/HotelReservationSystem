@@ -43,6 +43,14 @@
     <Property Name="GorevDepartman" Type="int" />
     <Property Name="GorevDurum" Type="int" />
   </EntityType>
+  <EntityType Name="TblIlceler">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="ilce" Type="nvarchar" MaxLength="255" />
+    <Property Name="sehir" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
   <EntityType Name="TblKasa">
     <Key>
       <PropertyRef Name="KasaID" />
@@ -78,6 +86,8 @@
     <Property Name="MusteriAciklama" Type="nvarchar" MaxLength="250" />
     <Property Name="MusteriKimlikFoto1" Type="nvarchar" MaxLength="100" />
     <Property Name="MusteriKimlikFoto2" Type="nvarchar" MaxLength="100" />
+    <Property Name="MusteriSehir" Type="int" />
+    <Property Name="MusteriIlce" Type="int" />
     <Property Name="MusteriUlke" Type="int" />
     <Property Name="MusteriDurum" Type="int" />
   </EntityType>
@@ -113,6 +123,13 @@
     <Property Name="PersonelSifre" Type="nvarchar" MaxLength="20" />
     <Property Name="PersonelYetki" Type="char" MaxLength="1" />
     <Property Name="PersonelDurum" Type="int" />
+  </EntityType>
+  <EntityType Name="TblSehirler">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sehir" Type="nvarchar" MaxLength="255" />
   </EntityType>
   <EntityType Name="TblTelefon">
     <Key>
@@ -199,6 +216,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_TblIlceler_TblSehirler">
+    <End Role="TblSehirler" Type="Self.TblSehirler" Multiplicity="1" />
+    <End Role="TblIlceler" Type="Self.TblIlceler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblSehirler">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TblIlceler">
+        <PropertyRef Name="sehir" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_TblKasa_TblDurum">
     <End Role="TblDurum" Type="Self.TblDurum" Multiplicity="0..1" />
     <End Role="TblKasa" Type="Self.TblKasa" Multiplicity="*" />
@@ -220,6 +249,30 @@
       </Principal>
       <Dependent Role="TblMusteri">
         <PropertyRef Name="MusteriDurum" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TblMusteri_TblIlceler">
+    <End Role="TblIlceler" Type="Self.TblIlceler" Multiplicity="0..1" />
+    <End Role="TblMusteri" Type="Self.TblMusteri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblIlceler">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TblMusteri">
+        <PropertyRef Name="MusteriIlce" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TblMusteri_TblSehirler">
+    <End Role="TblSehirler" Type="Self.TblSehirler" Multiplicity="0..1" />
+    <End Role="TblMusteri" Type="Self.TblMusteri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblSehirler">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TblMusteri">
+        <PropertyRef Name="MusteriSehir" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -337,11 +390,13 @@
     <EntitySet Name="TblDepartman" EntityType="Self.TblDepartman" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TblDurum" EntityType="Self.TblDurum" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TblGorev" EntityType="Self.TblGorev" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblIlceler" EntityType="Self.TblIlceler" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TblKasa" EntityType="Self.TblKasa" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TblKur" EntityType="Self.TblKur" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TblMusteri" EntityType="Self.TblMusteri" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TblOda" EntityType="Self.TblOda" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TblPersonel" EntityType="Self.TblPersonel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblSehirler" EntityType="Self.TblSehirler" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TblTelefon" EntityType="Self.TblTelefon" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TblUlke" EntityType="Self.TblUlke" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TblUrun" EntityType="Self.TblUrun" Schema="dbo" store:Type="Tables" />
@@ -362,12 +417,24 @@
       <End Role="TblDurum" EntitySet="TblDurum" />
       <End Role="TblGorev" EntitySet="TblGorev" />
     </AssociationSet>
+    <AssociationSet Name="FK_TblIlceler_TblSehirler" Association="Self.FK_TblIlceler_TblSehirler">
+      <End Role="TblSehirler" EntitySet="TblSehirler" />
+      <End Role="TblIlceler" EntitySet="TblIlceler" />
+    </AssociationSet>
     <AssociationSet Name="FK_TblKasa_TblDurum" Association="Self.FK_TblKasa_TblDurum">
       <End Role="TblDurum" EntitySet="TblDurum" />
       <End Role="TblKasa" EntitySet="TblKasa" />
     </AssociationSet>
     <AssociationSet Name="FK_TblMusteri_TblDurum" Association="Self.FK_TblMusteri_TblDurum">
       <End Role="TblDurum" EntitySet="TblDurum" />
+      <End Role="TblMusteri" EntitySet="TblMusteri" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TblMusteri_TblIlceler" Association="Self.FK_TblMusteri_TblIlceler">
+      <End Role="TblIlceler" EntitySet="TblIlceler" />
+      <End Role="TblMusteri" EntitySet="TblMusteri" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TblMusteri_TblSehirler" Association="Self.FK_TblMusteri_TblSehirler">
+      <End Role="TblSehirler" EntitySet="TblSehirler" />
       <End Role="TblMusteri" EntitySet="TblMusteri" />
     </AssociationSet>
     <AssociationSet Name="FK_TblOda_TblDurum" Association="Self.FK_TblOda_TblDurum">

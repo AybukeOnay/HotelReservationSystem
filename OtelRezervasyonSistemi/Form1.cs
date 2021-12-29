@@ -89,5 +89,31 @@ namespace OtelRezervasyonSistemi
             fr.MdiParent = this;
             fr.Show();
         }
+
+        private void btn_MisafirKarti_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Misafir.FrmMisafirKarti fr = new Formlar.Misafir.FrmMisafirKarti();
+            fr.Show();
+        }
+
+        private void btn_MisafirListesi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Misafir.FrmMisafirListesi fr = new Formlar.Misafir.FrmMisafirListesi();
+            fr.MdiParent = this;
+            fr.Show();
+        }
+
+        private void btn_UrunListesi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Urun.FrmUrunListesi fr = new Formlar.Urun.FrmUrunListesi();
+            fr.MdiParent = this;
+            fr.Show();
+        }
+
+        private void btn_UrunKarti_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Urun.FrmUrunKarti fr = new Formlar.Urun.FrmUrunKarti();
+            fr.Show();
+        }
     }
 }

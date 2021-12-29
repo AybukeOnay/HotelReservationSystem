@@ -27,7 +27,26 @@ namespace OtelRezervasyonSistemi.Formlar.Personel
         private void FrmPersonelKarti_Load(object sender, EventArgs e)
         {
             this.Text = id.ToString();
-
+            
+            if(id != 0)
+            {
+                var personel = repo.TFind(x => x.PersonelID == id);
+                txt_AdSoyad.Text = personel.PersonelAdSoyad;
+                txt_TcNo.Text = personel.PersonelTC;
+                txt_Telefon.Text = personel.PersonelTelefon;
+                txt_Mail.Text = personel.PersonelMail;
+                memoEditAciklama.Text = personel.PersonelAciklama;
+                memoEditAdres.Text = personel.PersonelAdres;
+                date_Giris.Text = personel.PersonelIseGirisTarihi.ToString();
+                date_Cikis.Text = personel.PersonelIstenCikisTarihi.ToString();
+                txt_Sifre.Text = personel.PersonelSifre;
+                pictureKimlikOn.Image = Image.FromFile(personel.PersonelKimlikOn);
+                pictureKimlikArka.Image = Image.FromFile(personel.PersonelKimlikArka);
+                lookUpEditDepartman.EditValue = personel.PersonelDepartman;
+                lookUpEditGorev.EditValue = personel.PersonelGorev;
+                lbl_KimlikOnYol.Text = personel.PersonelKimlikOn;
+                lbl_KimlikArkaYol.Text = personel.PersonelKimlikArka;
+            }
             lookUpEditDepartman.Properties.DataSource = (from x in db.TblDepartmen
                                                          select new
                                                          {
@@ -40,7 +59,7 @@ namespace OtelRezervasyonSistemi.Formlar.Personel
                                                      {
                                                          x.GorevID,
                                                          x.GorevAd
-                                                     }).ToList(); ;
+                                                     }).ToList(); 
         }
 
         private void btn_Kaydet_Click(object sender, EventArgs e)
@@ -75,10 +94,26 @@ namespace OtelRezervasyonSistemi.Formlar.Personel
             deger.PersonelDepartman = int.Parse(lookUpEditDepartman.EditValue.ToString());
             deger.PersonelGorev = int.Parse(lookUpEditGorev.EditValue.ToString());
             deger.PersonelAciklama = memoEditAciklama.Text;
-            deger.PersonelKimlikOn = pictureKimlikOn.GetLoadedImageLocation();
-            deger.PersonelKimlikArka = pictureKimlikArka.GetLoadedImageLocation();
+            deger.PersonelKimlikOn = lbl_KimlikOnYol.Text;
+            deger.PersonelKimlikArka = lbl_KimlikArkaYol.Text;
+            deger.PersonelSifre = lbl_Sifre.Text;
             repo.TUpdate(deger);
             XtraMessageBox.Show("Personel başarılı bir şekilde güncellendi", "Bilgilendirme", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void pictureKimlikOn_EditValueChanged(object sender, EventArgs e)
+        {
+            lbl_KimlikOnYol.Text = pictureKimlikOn.GetLoadedImageLocation().ToString();
+        }
+
+        private void pictureKimlikArka_EditValueChanged(object sender, EventArgs e)
+        {
+            lbl_KimlikArkaYol.Text = pictureKimlikArka.GetLoadedImageLocation().ToString();
+        }
+
+        private void btn_Vazgec_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

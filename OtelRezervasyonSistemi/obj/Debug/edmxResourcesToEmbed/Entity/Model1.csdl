@@ -100,6 +100,10 @@
     <Property Name="MusteriUlke" Type="Int32" />
     <Property Name="MusteriDurum" Type="Int32" />
     <NavigationProperty Name="TblDurum" Relationship="Self.FK_TblMusteri_TblDurum" FromRole="TblMusteri" ToRole="TblDurum" />
+    <Property Name="MusteriSehir" Type="Int32" />
+    <Property Name="MusteriIlce" Type="Int32" />
+    <NavigationProperty Name="TblIlceler" Relationship="DbOtelRezervasyonSistemiModel.FK_TblMusteri_TblIlceler" FromRole="TblMusteri" ToRole="TblIlceler" />
+    <NavigationProperty Name="TblSehirler" Relationship="DbOtelRezervasyonSistemiModel.FK_TblMusteri_TblSehirler" FromRole="TblMusteri" ToRole="TblSehirler" />
   </EntityType>
   <EntityType Name="TblOda">
     <Key>
@@ -436,5 +440,74 @@
       <End Role="TblUrunGrup" EntitySet="TblUrunGrups" />
       <End Role="TblUrun" EntitySet="TblUruns" />
     </AssociationSet>
+    <EntitySet Name="TblIlcelers" EntityType="DbOtelRezervasyonSistemiModel.TblIlceler" />
+    <EntitySet Name="TblSehirlers" EntityType="DbOtelRezervasyonSistemiModel.TblSehirler" />
+    <AssociationSet Name="FK_TblIlceler_TblSehirler" Association="DbOtelRezervasyonSistemiModel.FK_TblIlceler_TblSehirler">
+      <End Role="TblSehirler" EntitySet="TblSehirlers" />
+      <End Role="TblIlceler" EntitySet="TblIlcelers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TblMusteri_TblIlceler" Association="DbOtelRezervasyonSistemiModel.FK_TblMusteri_TblIlceler">
+      <End Role="TblIlceler" EntitySet="TblIlcelers" />
+      <End Role="TblMusteri" EntitySet="TblMusteris" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TblMusteri_TblSehirler" Association="DbOtelRezervasyonSistemiModel.FK_TblMusteri_TblSehirler">
+      <End Role="TblSehirler" EntitySet="TblSehirlers" />
+      <End Role="TblMusteri" EntitySet="TblMusteris" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="TblIlceler">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="ilce" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="sehir" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="TblSehirler" Relationship="DbOtelRezervasyonSistemiModel.FK_TblIlceler_TblSehirler" FromRole="TblIlceler" ToRole="TblSehirler" />
+    <NavigationProperty Name="TblMusteris" Relationship="DbOtelRezervasyonSistemiModel.FK_TblMusteri_TblIlceler" FromRole="TblIlceler" ToRole="TblMusteri" />
+  </EntityType>
+  <EntityType Name="TblSehirler">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sehir" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TblIlcelers" Relationship="DbOtelRezervasyonSistemiModel.FK_TblIlceler_TblSehirler" FromRole="TblSehirler" ToRole="TblIlceler" />
+    <NavigationProperty Name="TblMusteris" Relationship="DbOtelRezervasyonSistemiModel.FK_TblMusteri_TblSehirler" FromRole="TblSehirler" ToRole="TblMusteri" />
+  </EntityType>
+  <Association Name="FK_TblIlceler_TblSehirler">
+    <End Type="DbOtelRezervasyonSistemiModel.TblSehirler" Role="TblSehirler" Multiplicity="1" />
+    <End Type="DbOtelRezervasyonSistemiModel.TblIlceler" Role="TblIlceler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblSehirler">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TblIlceler">
+        <PropertyRef Name="sehir" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TblMusteri_TblIlceler">
+    <End Type="DbOtelRezervasyonSistemiModel.TblIlceler" Role="TblIlceler" Multiplicity="0..1" />
+    <End Type="DbOtelRezervasyonSistemiModel.TblMusteri" Role="TblMusteri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblIlceler">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TblMusteri">
+        <PropertyRef Name="MusteriIlce" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TblMusteri_TblSehirler">
+    <End Type="DbOtelRezervasyonSistemiModel.TblSehirler" Role="TblSehirler" Multiplicity="0..1" />
+    <End Type="DbOtelRezervasyonSistemiModel.TblMusteri" Role="TblMusteri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblSehirler">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TblMusteri">
+        <PropertyRef Name="MusteriSehir" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

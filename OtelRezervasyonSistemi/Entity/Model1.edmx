@@ -48,6 +48,14 @@
           <Property Name="GorevDepartman" Type="int" />
           <Property Name="GorevDurum" Type="int" />
         </EntityType>
+        <EntityType Name="TblIlceler">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="ilce" Type="nvarchar" MaxLength="255" />
+          <Property Name="sehir" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
         <EntityType Name="TblKasa">
           <Key>
             <PropertyRef Name="KasaID" />
@@ -83,6 +91,8 @@
           <Property Name="MusteriAciklama" Type="nvarchar" MaxLength="250" />
           <Property Name="MusteriKimlikFoto1" Type="nvarchar" MaxLength="100" />
           <Property Name="MusteriKimlikFoto2" Type="nvarchar" MaxLength="100" />
+          <Property Name="MusteriSehir" Type="int" />
+          <Property Name="MusteriIlce" Type="int" />
           <Property Name="MusteriUlke" Type="int" />
           <Property Name="MusteriDurum" Type="int" />
         </EntityType>
@@ -118,6 +128,13 @@
           <Property Name="PersonelSifre" Type="nvarchar" MaxLength="20" />
           <Property Name="PersonelYetki" Type="char" MaxLength="1" />
           <Property Name="PersonelDurum" Type="int" />
+        </EntityType>
+        <EntityType Name="TblSehirler">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sehir" Type="nvarchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="TblTelefon">
           <Key>
@@ -204,6 +221,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_TblIlceler_TblSehirler">
+          <End Role="TblSehirler" Type="Self.TblSehirler" Multiplicity="1" />
+          <End Role="TblIlceler" Type="Self.TblIlceler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblSehirler">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TblIlceler">
+              <PropertyRef Name="sehir" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_TblKasa_TblDurum">
           <End Role="TblDurum" Type="Self.TblDurum" Multiplicity="0..1" />
           <End Role="TblKasa" Type="Self.TblKasa" Multiplicity="*" />
@@ -225,6 +254,30 @@
             </Principal>
             <Dependent Role="TblMusteri">
               <PropertyRef Name="MusteriDurum" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TblMusteri_TblIlceler">
+          <End Role="TblIlceler" Type="Self.TblIlceler" Multiplicity="0..1" />
+          <End Role="TblMusteri" Type="Self.TblMusteri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblIlceler">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TblMusteri">
+              <PropertyRef Name="MusteriIlce" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TblMusteri_TblSehirler">
+          <End Role="TblSehirler" Type="Self.TblSehirler" Multiplicity="0..1" />
+          <End Role="TblMusteri" Type="Self.TblMusteri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblSehirler">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TblMusteri">
+              <PropertyRef Name="MusteriSehir" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -342,11 +395,13 @@
           <EntitySet Name="TblDepartman" EntityType="Self.TblDepartman" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblDurum" EntityType="Self.TblDurum" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblGorev" EntityType="Self.TblGorev" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblIlceler" EntityType="Self.TblIlceler" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblKasa" EntityType="Self.TblKasa" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblKur" EntityType="Self.TblKur" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblMusteri" EntityType="Self.TblMusteri" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblOda" EntityType="Self.TblOda" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblPersonel" EntityType="Self.TblPersonel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblSehirler" EntityType="Self.TblSehirler" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblTelefon" EntityType="Self.TblTelefon" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblUlke" EntityType="Self.TblUlke" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblUrun" EntityType="Self.TblUrun" Schema="dbo" store:Type="Tables" />
@@ -367,12 +422,24 @@
             <End Role="TblDurum" EntitySet="TblDurum" />
             <End Role="TblGorev" EntitySet="TblGorev" />
           </AssociationSet>
+          <AssociationSet Name="FK_TblIlceler_TblSehirler" Association="Self.FK_TblIlceler_TblSehirler">
+            <End Role="TblSehirler" EntitySet="TblSehirler" />
+            <End Role="TblIlceler" EntitySet="TblIlceler" />
+          </AssociationSet>
           <AssociationSet Name="FK_TblKasa_TblDurum" Association="Self.FK_TblKasa_TblDurum">
             <End Role="TblDurum" EntitySet="TblDurum" />
             <End Role="TblKasa" EntitySet="TblKasa" />
           </AssociationSet>
           <AssociationSet Name="FK_TblMusteri_TblDurum" Association="Self.FK_TblMusteri_TblDurum">
             <End Role="TblDurum" EntitySet="TblDurum" />
+            <End Role="TblMusteri" EntitySet="TblMusteri" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TblMusteri_TblIlceler" Association="Self.FK_TblMusteri_TblIlceler">
+            <End Role="TblIlceler" EntitySet="TblIlceler" />
+            <End Role="TblMusteri" EntitySet="TblMusteri" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TblMusteri_TblSehirler" Association="Self.FK_TblMusteri_TblSehirler">
+            <End Role="TblSehirler" EntitySet="TblSehirler" />
             <End Role="TblMusteri" EntitySet="TblMusteri" />
           </AssociationSet>
           <AssociationSet Name="FK_TblOda_TblDurum" Association="Self.FK_TblOda_TblDurum">
@@ -516,6 +583,10 @@
           <Property Name="MusteriUlke" Type="Int32" />
           <Property Name="MusteriDurum" Type="Int32" />
           <NavigationProperty Name="TblDurum" Relationship="Self.FK_TblMusteri_TblDurum" FromRole="TblMusteri" ToRole="TblDurum" />
+          <Property Name="MusteriSehir" Type="Int32" />
+          <Property Name="MusteriIlce" Type="Int32" />
+          <NavigationProperty Name="TblIlceler" Relationship="DbOtelRezervasyonSistemiModel.FK_TblMusteri_TblIlceler" FromRole="TblMusteri" ToRole="TblIlceler" />
+          <NavigationProperty Name="TblSehirler" Relationship="DbOtelRezervasyonSistemiModel.FK_TblMusteri_TblSehirler" FromRole="TblMusteri" ToRole="TblSehirler" />
         </EntityType>
         <EntityType Name="TblOda">
           <Key>
@@ -852,7 +923,76 @@
             <End Role="TblUrunGrup" EntitySet="TblUrunGrups" />
             <End Role="TblUrun" EntitySet="TblUruns" />
           </AssociationSet>
+          <EntitySet Name="TblIlcelers" EntityType="DbOtelRezervasyonSistemiModel.TblIlceler" />
+          <EntitySet Name="TblSehirlers" EntityType="DbOtelRezervasyonSistemiModel.TblSehirler" />
+          <AssociationSet Name="FK_TblIlceler_TblSehirler" Association="DbOtelRezervasyonSistemiModel.FK_TblIlceler_TblSehirler">
+            <End Role="TblSehirler" EntitySet="TblSehirlers" />
+            <End Role="TblIlceler" EntitySet="TblIlcelers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TblMusteri_TblIlceler" Association="DbOtelRezervasyonSistemiModel.FK_TblMusteri_TblIlceler">
+            <End Role="TblIlceler" EntitySet="TblIlcelers" />
+            <End Role="TblMusteri" EntitySet="TblMusteris" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TblMusteri_TblSehirler" Association="DbOtelRezervasyonSistemiModel.FK_TblMusteri_TblSehirler">
+            <End Role="TblSehirler" EntitySet="TblSehirlers" />
+            <End Role="TblMusteri" EntitySet="TblMusteris" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="TblIlceler">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="ilce" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="sehir" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="TblSehirler" Relationship="DbOtelRezervasyonSistemiModel.FK_TblIlceler_TblSehirler" FromRole="TblIlceler" ToRole="TblSehirler" />
+          <NavigationProperty Name="TblMusteris" Relationship="DbOtelRezervasyonSistemiModel.FK_TblMusteri_TblIlceler" FromRole="TblIlceler" ToRole="TblMusteri" />
+        </EntityType>
+        <EntityType Name="TblSehirler">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sehir" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TblIlcelers" Relationship="DbOtelRezervasyonSistemiModel.FK_TblIlceler_TblSehirler" FromRole="TblSehirler" ToRole="TblIlceler" />
+          <NavigationProperty Name="TblMusteris" Relationship="DbOtelRezervasyonSistemiModel.FK_TblMusteri_TblSehirler" FromRole="TblSehirler" ToRole="TblMusteri" />
+        </EntityType>
+        <Association Name="FK_TblIlceler_TblSehirler">
+          <End Type="DbOtelRezervasyonSistemiModel.TblSehirler" Role="TblSehirler" Multiplicity="1" />
+          <End Type="DbOtelRezervasyonSistemiModel.TblIlceler" Role="TblIlceler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblSehirler">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TblIlceler">
+              <PropertyRef Name="sehir" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TblMusteri_TblIlceler">
+          <End Type="DbOtelRezervasyonSistemiModel.TblIlceler" Role="TblIlceler" Multiplicity="0..1" />
+          <End Type="DbOtelRezervasyonSistemiModel.TblMusteri" Role="TblMusteri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblIlceler">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TblMusteri">
+              <PropertyRef Name="MusteriIlce" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TblMusteri_TblSehirler">
+          <End Type="DbOtelRezervasyonSistemiModel.TblSehirler" Role="TblSehirler" Multiplicity="0..1" />
+          <End Type="DbOtelRezervasyonSistemiModel.TblMusteri" Role="TblMusteri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblSehirler">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TblMusteri">
+              <PropertyRef Name="MusteriSehir" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -934,6 +1074,8 @@
           <EntitySetMapping Name="TblMusteris">
             <EntityTypeMapping TypeName="DbOtelRezervasyonSistemiModel.TblMusteri">
               <MappingFragment StoreEntitySet="TblMusteri">
+                <ScalarProperty Name="MusteriIlce" ColumnName="MusteriIlce" />
+                <ScalarProperty Name="MusteriSehir" ColumnName="MusteriSehir" />
                 <ScalarProperty Name="MusteriID" ColumnName="MusteriID" />
                 <ScalarProperty Name="MusteriAdSoyad" ColumnName="MusteriAdSoyad" />
                 <ScalarProperty Name="MusteriTC" ColumnName="MusteriTC" />
@@ -1021,6 +1163,23 @@
                 <ScalarProperty Name="UrunGrupID" ColumnName="UrunGrupID" />
                 <ScalarProperty Name="UrunGrupAd" ColumnName="UrunGrupAd" />
                 <ScalarProperty Name="UrunGrupDurum" ColumnName="UrunGrupDurum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblIlcelers">
+            <EntityTypeMapping TypeName="DbOtelRezervasyonSistemiModel.TblIlceler">
+              <MappingFragment StoreEntitySet="TblIlceler">
+                <ScalarProperty Name="sehir" ColumnName="sehir" />
+                <ScalarProperty Name="ilce" ColumnName="ilce" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblSehirlers">
+            <EntityTypeMapping TypeName="DbOtelRezervasyonSistemiModel.TblSehirler">
+              <MappingFragment StoreEntitySet="TblSehirler">
+                <ScalarProperty Name="sehir" ColumnName="sehir" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

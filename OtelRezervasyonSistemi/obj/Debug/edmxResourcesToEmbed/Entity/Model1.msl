@@ -76,6 +76,8 @@
     <EntitySetMapping Name="TblMusteris">
       <EntityTypeMapping TypeName="DbOtelRezervasyonSistemiModel.TblMusteri">
         <MappingFragment StoreEntitySet="TblMusteri">
+          <ScalarProperty Name="MusteriIlce" ColumnName="MusteriIlce" />
+          <ScalarProperty Name="MusteriSehir" ColumnName="MusteriSehir" />
           <ScalarProperty Name="MusteriID" ColumnName="MusteriID" />
           <ScalarProperty Name="MusteriAdSoyad" ColumnName="MusteriAdSoyad" />
           <ScalarProperty Name="MusteriTC" ColumnName="MusteriTC" />
@@ -163,6 +165,23 @@
           <ScalarProperty Name="UrunGrupID" ColumnName="UrunGrupID" />
           <ScalarProperty Name="UrunGrupAd" ColumnName="UrunGrupAd" />
           <ScalarProperty Name="UrunGrupDurum" ColumnName="UrunGrupDurum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblIlcelers">
+      <EntityTypeMapping TypeName="DbOtelRezervasyonSistemiModel.TblIlceler">
+        <MappingFragment StoreEntitySet="TblIlceler">
+          <ScalarProperty Name="sehir" ColumnName="sehir" />
+          <ScalarProperty Name="ilce" ColumnName="ilce" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblSehirlers">
+      <EntityTypeMapping TypeName="DbOtelRezervasyonSistemiModel.TblSehirler">
+        <MappingFragment StoreEntitySet="TblSehirler">
+          <ScalarProperty Name="sehir" ColumnName="sehir" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

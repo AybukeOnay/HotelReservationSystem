@@ -34,6 +34,11 @@
         <AssociationConnector Association="DbOtelRezervasyonSistemiModel.FK_TblUrunGrup_TblDurum" ManuallyRouted="false" />
         <AssociationConnector Association="DbOtelRezervasyonSistemiModel.FK_TblPersonel_TblGorev" ManuallyRouted="false" />
         <AssociationConnector Association="DbOtelRezervasyonSistemiModel.FK_TblUrun_TblUrunGrup" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DbOtelRezervasyonSistemiModel.TblIlceler" Width="1.5" PointX="8.375" PointY="0.75" />
+        <EntityTypeShape EntityType="DbOtelRezervasyonSistemiModel.TblSehirler" Width="1.5" PointX="8.375" PointY="3.75" />
+        <AssociationConnector Association="DbOtelRezervasyonSistemiModel.FK_TblIlceler_TblSehirler" />
+        <AssociationConnector Association="DbOtelRezervasyonSistemiModel.FK_TblMusteri_TblIlceler" />
+        <AssociationConnector Association="DbOtelRezervasyonSistemiModel.FK_TblMusteri_TblSehirler" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

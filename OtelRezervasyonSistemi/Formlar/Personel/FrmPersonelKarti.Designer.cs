@@ -55,6 +55,7 @@ namespace OtelRezervasyonSistemi.Formlar.Personel
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.tabpg_Bilgiler = new DevExpress.XtraTab.XtraTabPage();
             this.groupControlButons = new DevExpress.XtraEditors.GroupControl();
+            this.btn_Guncelle = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Kaydet = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Vazgec = new DevExpress.XtraEditors.SimpleButton();
             this.memoEditAdres = new DevExpress.XtraEditors.MemoEdit();
@@ -87,7 +88,8 @@ namespace OtelRezervasyonSistemi.Formlar.Personel
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.rdbutton_Yetki1 = new System.Windows.Forms.RadioButton();
             this.pictureEdit13 = new DevExpress.XtraEditors.PictureEdit();
-            this.btn_Guncelle = new DevExpress.XtraEditors.SimpleButton();
+            this.lbl_KimlikOnYol = new DevExpress.XtraEditors.LabelControl();
+            this.lbl_KimlikArkaYol = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_AdSoyad.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditDepartman.Properties)).BeginInit();
@@ -436,6 +438,16 @@ namespace OtelRezervasyonSistemi.Formlar.Personel
             this.groupControlButons.TabIndex = 13;
             this.groupControlButons.Text = "groupControl1";
             // 
+            // btn_Guncelle
+            // 
+            this.btn_Guncelle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Guncelle.ImageOptions.Image")));
+            this.btn_Guncelle.Location = new System.Drawing.Point(287, 4);
+            this.btn_Guncelle.Name = "btn_Guncelle";
+            this.btn_Guncelle.Size = new System.Drawing.Size(131, 44);
+            this.btn_Guncelle.TabIndex = 2;
+            this.btn_Guncelle.Text = "Güncelle";
+            this.btn_Guncelle.Click += new System.EventHandler(this.btn_Guncelle_Click);
+            // 
             // btn_Kaydet
             // 
             this.btn_Kaydet.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Kaydet.ImageOptions.Image")));
@@ -454,12 +466,13 @@ namespace OtelRezervasyonSistemi.Formlar.Personel
             this.btn_Vazgec.Size = new System.Drawing.Size(131, 44);
             this.btn_Vazgec.TabIndex = 0;
             this.btn_Vazgec.Text = "Vazgeç";
+            this.btn_Vazgec.Click += new System.EventHandler(this.btn_Vazgec_Click);
             // 
             // memoEditAdres
             // 
             this.memoEditAdres.Location = new System.Drawing.Point(110, 14);
             this.memoEditAdres.Name = "memoEditAdres";
-            this.memoEditAdres.Size = new System.Drawing.Size(448, 151);
+            this.memoEditAdres.Size = new System.Drawing.Size(448, 145);
             this.memoEditAdres.TabIndex = 6;
             // 
             // pictureEdit10
@@ -569,6 +582,8 @@ namespace OtelRezervasyonSistemi.Formlar.Personel
             // 
             // tabpg_Dokumanlar
             // 
+            this.tabpg_Dokumanlar.Controls.Add(this.lbl_KimlikArkaYol);
+            this.tabpg_Dokumanlar.Controls.Add(this.lbl_KimlikOnYol);
             this.tabpg_Dokumanlar.Controls.Add(this.groupControl3);
             this.tabpg_Dokumanlar.Controls.Add(this.memoEditAciklama);
             this.tabpg_Dokumanlar.Controls.Add(this.pictureEdit11);
@@ -597,6 +612,7 @@ namespace OtelRezervasyonSistemi.Formlar.Personel
             this.pictureKimlikArka.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureKimlikArka.Size = new System.Drawing.Size(261, 124);
             this.pictureKimlikArka.TabIndex = 12;
+            this.pictureKimlikArka.EditValueChanged += new System.EventHandler(this.pictureKimlikArka_EditValueChanged);
             // 
             // pictureKimlikOn
             // 
@@ -606,12 +622,13 @@ namespace OtelRezervasyonSistemi.Formlar.Personel
             this.pictureKimlikOn.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureKimlikOn.Size = new System.Drawing.Size(273, 123);
             this.pictureKimlikOn.TabIndex = 11;
+            this.pictureKimlikOn.EditValueChanged += new System.EventHandler(this.pictureKimlikOn_EditValueChanged);
             // 
             // memoEditAciklama
             // 
             this.memoEditAciklama.Location = new System.Drawing.Point(108, 3);
             this.memoEditAciklama.Name = "memoEditAciklama";
-            this.memoEditAciklama.Size = new System.Drawing.Size(450, 145);
+            this.memoEditAciklama.Size = new System.Drawing.Size(450, 129);
             this.memoEditAciklama.TabIndex = 9;
             // 
             // pictureEdit11
@@ -791,15 +808,23 @@ namespace OtelRezervasyonSistemi.Formlar.Personel
             this.pictureEdit13.Size = new System.Drawing.Size(25, 25);
             this.pictureEdit13.TabIndex = 14;
             // 
-            // btn_Guncelle
+            // lbl_KimlikOnYol
             // 
-            this.btn_Guncelle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.btn_Guncelle.Location = new System.Drawing.Point(287, 4);
-            this.btn_Guncelle.Name = "btn_Guncelle";
-            this.btn_Guncelle.Size = new System.Drawing.Size(131, 44);
-            this.btn_Guncelle.TabIndex = 2;
-            this.btn_Guncelle.Text = "Güncelle";
-            this.btn_Guncelle.Click += new System.EventHandler(this.btn_Guncelle_Click);
+            this.lbl_KimlikOnYol.Location = new System.Drawing.Point(6, 138);
+            this.lbl_KimlikOnYol.Name = "lbl_KimlikOnYol";
+            this.lbl_KimlikOnYol.Size = new System.Drawing.Size(63, 13);
+            this.lbl_KimlikOnYol.TabIndex = 15;
+            this.lbl_KimlikOnYol.Text = "labelControl4";
+            this.lbl_KimlikOnYol.Visible = false;
+            // 
+            // lbl_KimlikArkaYol
+            // 
+            this.lbl_KimlikArkaYol.Location = new System.Drawing.Point(297, 138);
+            this.lbl_KimlikArkaYol.Name = "lbl_KimlikArkaYol";
+            this.lbl_KimlikArkaYol.Size = new System.Drawing.Size(63, 13);
+            this.lbl_KimlikArkaYol.TabIndex = 16;
+            this.lbl_KimlikArkaYol.Text = "labelControl5";
+            this.lbl_KimlikArkaYol.Visible = false;
             // 
             // FrmPersonelKarti
             // 
@@ -933,5 +958,7 @@ namespace OtelRezervasyonSistemi.Formlar.Personel
         private DevExpress.XtraEditors.DateEdit date_Cikis;
         private DevExpress.XtraEditors.DateEdit date_Giris;
         private DevExpress.XtraEditors.SimpleButton btn_Guncelle;
+        private DevExpress.XtraEditors.LabelControl lbl_KimlikArkaYol;
+        private DevExpress.XtraEditors.LabelControl lbl_KimlikOnYol;
     }
 }
